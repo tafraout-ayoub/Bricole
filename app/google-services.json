@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "875628197647",
+    "firebase_url": "https://bricoledemo-default-rtdb.firebaseio.com",
+    "project_id": "bricoledemo",
+    "storage_bucket": "bricoledemo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875628197647:android:e2f08bf70255c47567307a",
+        "android_client_info": {
+          "package_name": "com.example.bricole"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwgaWNBA8adYz0ZdavtpvpU_vYESwQUxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

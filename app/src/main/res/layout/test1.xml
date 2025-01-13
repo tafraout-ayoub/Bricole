@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/checkGroup"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="15dp">
+       <CheckBox
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/check1"
+           android:text="FC BARCELONA"
+           android:checked="true"
+           />
+       <CheckBox
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/check2"
+           android:text="REAL MADRID"
+           android:checked="false"
+           android:layout_toRightOf="@+id/check1"
+           android:layout_marginLeft="10dp"
+           />
+       <CheckBox
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/check3"
+           android:text="LIVERPOOL"
+           android:checked="false"
+           android:layout_toRightOf="@+id/check2"
+           android:layout_marginLeft="10dp"
+           />
+
+   </RelativeLayout>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rdGroup"
+        android:layout_below="@+id/checkGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbMessi"
+            android:textColor="#ff00aa"
+            android:text="messi"
+            android:checked="true"
+            android:textStyle="italic|bold"
+            android:layout_marginRight="10dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbRonaldo"
+            android:text="ronaldo"
+            android:textStyle="italic|bold"
+            android:layout_marginRight="10dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbLeva"
+            android:text="lewandowski"
+            android:textStyle="italic|bold"/>
+    </RadioGroup>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:visibility="visible"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
