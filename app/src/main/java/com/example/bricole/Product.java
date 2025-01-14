@@ -6,6 +6,7 @@ public class Product {
     private String id, name, description, product_user, statute, created_at, updated_at;
     private double price;
     private int quantity;
+    private List<String> product_images;
     //The First Constructor without update_at => for the first time create
     public Product(String id, String product_user, String name, String description, double price, int quantity, String statute, List<String> product_images,String created_at) {
         this.id = id;
@@ -90,7 +91,7 @@ public class Product {
         this.statute = statute;
     }
 
-    private List<String> product_images;
+
 
 
 }

@@ -76,7 +76,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+        app:layout_constraintTop_toTopOf="@+id/guideline8"
+        android:drawableStart="@drawable/profile_icon"
+        android:drawablePadding="10dp"/>
 
     <EditText
         android:id="@+id/InputPasswordLogin"

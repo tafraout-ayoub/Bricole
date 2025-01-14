@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -51,13 +52,19 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String email,username,password, role;
                 email=InputEmail.getText().toString();
                 username= InputUsername.getText().toString();
                 password = InputPassword.getText().toString();
-                role = "CraftsMan";
+                role = getSelectedRole(UserRole);
+                if (checkInputs()){
+                    registerUser(username, email, password, role);
+                }else{
+                    checkInputs();
+                }
 //                createAccount(email,password);
-                registerUser(username, email, password, role);
+
 
             }
         });
@@ -112,6 +119,12 @@ public class RegisterActivity extends AppCompatActivity {
 //        mAuth.createUserWithEmailAndPassword(email, password)
 //    }
 
+    public String getSelectedRole(RadioGroup radioGroup){
+        int selected = radioGroup.getCheckedRadioButtonId();
+        if (selected == -1){return "";}
+        RadioButton selectedRadioButton = radioGroup.findViewById(selected);
+        return selectedRadioButton.getText().toString();
+    }
 
     public void registerUser(String username, String email, String password, String role) {
         // Initialize Firebase Authentication and Realtime Database references
@@ -156,6 +169,42 @@ public class RegisterActivity extends AppCompatActivity {
                 });
     }
 
+    private boolean checkInputs() {
+        // Check InputEmailLogin
+        EditText emailInput = findViewById(R.id.InputEmailLogin);
+        String email = emailInput.getText().toString().trim();
+        if (email.isEmpty()) {
+            emailInput.setError("Email is required");
+            return false;
+        }
+
+        // Check InputUsername
+        EditText usernameInput = findViewById(R.id.InputUsername);
+        String username = usernameInput.getText().toString().trim();
+        if (username.isEmpty()) {
+            usernameInput.setError("Username is required");
+            return false;
+        }
+
+        // Check InputPasswordLogin
+        EditText passwordInput = findViewById(R.id.InputPasswordLogin);
+        String password = passwordInput.getText().toString().trim();
+        if (password.isEmpty()) {
+            passwordInput.setError("Password is required");
+            return false;
+        }
+
+        // Check UserRole (RadioGroup)
+        RadioGroup userRole = findViewById(R.id.UserRole);
+        if (userRole.getCheckedRadioButtonId() == -1) {
+            // No radio button is selected
+            Toast.makeText(this, "Please select a role", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        // If all inputs are valid
+        return true;
+    }
 
 }
 
